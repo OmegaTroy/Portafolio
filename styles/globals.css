@@ -1,0 +1,80 @@
+:root{
+  --violeta: #722fac;
+  --rojofurte: #fe001b;   
+  --Negro: #000;
+  --FO: #2a2b2f;
+  --FA: #0e1538;
+  --FV:  #461c50;
+  --Blanco: #fff;
+  --Primario: #2bd2ff;
+  --Secundario: #ff0461;
+  --Tercero: #18d539;
+  --Cuarto: #101010;
+  --gray-drak: #1f212b;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --secundario: #ff1867;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --gray: #6c757d;
+  --primary: #007bff;
+  --secondary: #232c33;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #2b343b;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --boton: #363636;
+  --seleste: #2196f3;
+}
+
+body{
+  user-select: none
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.moon{
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.moon::before{
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  animation: 4s cresent linear infinite alternate;
+}
+
+@keyframes cresent {
+  0%{
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+  50%{
+    transform: translate(0px, 0px) scale(1.02);
+    box-shadow: 0 0 10px #f9f3f2, 0 0 80px 8px var(--gray);
+    background: var(--dark);
+  }
+  100%{
+    transform: translate(30px, -30px) scale(0.9);
+    box-shadow: none;
+  }
+}
+
+.cir{
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
